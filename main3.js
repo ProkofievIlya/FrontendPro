@@ -1,16 +1,7 @@
-function splitAndPrintNumber() {
-    let num = prompt("Введіть п'ятизначне число:");
+let n = prompt("Введіть п'ятизначне число:");
+console.log(...n.toString()); //- у консоль
 
-    if (!num || num.length !== 5 || isNaN(num)) {
-        alert("Будь ласка, введіть дійсне п'ятизначне число.");
-        return;
-    }
+alert(n.toString().split('').join(' ')); // - у Alert
 
-    let digits = num.split('');
-
-    alert(digits.join(' '));
-}
-
-splitAndPrintNumber();
 
 
