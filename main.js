@@ -1,22 +1,20 @@
-let num = prompt("Введіть тризначне число:");
+let numOrStr = prompt('input number or string');
+console.log(numOrStr)
 
-if (num.length === 3 && !isNaN(num)) {
-    let z1 = num[0];
-    let z2 = num[1];
-    let z3 = num[2];
-
-    if (z1 === z2 && z2 === z3) {
-        console.log("Усі цифри однакові!");
-    }
-    else if (z1 === z2 || z1 === z3 || z2 === z3) {
-        console.log("Є однакові цифри!");
-    }
-    else {
-        console.log("Усі цифри різні!");
-    }
-} else {
-    console.log("Введіть тільки тризначне число!");
+switch (true) {
+    case (numOrStr === null):
+        console.log('ви скасували');
+        break;
+    case (numOrStr.trim() === ''):
+        console.log('Empty String');
+        break;
+    case (isNaN(+numOrStr)):
+        console.log(' number is Ba_NaN');
+        break;
+    default:
+        console.log('OK!');
 }
+
 
 
 
