@@ -1,7 +1,9 @@
-const exc = 26;
-for (let dol = 10; dol <= 100; dol += 10) {
-    let hrn = dol * exc;
-    console.log(`${dol} доларів = ${hrn} гривень`);
+let N = parseInt(prompt("Введіть ціле число N:"));
+
+for (let i = 1; i <= 100; i++) {
+    if (i * i <= N) {
+        console.log(i);
+    }
 }
 
 
