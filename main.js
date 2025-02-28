@@ -1,16 +1,19 @@
-function removeChars(str, charsToRemove) {
-    let result = '';
-    for (let i = 0; i < str.length; i++) {
-        if (!charsToRemove.includes(str[i])) {
-            result += str[i];
+function summery(arr) {
+    let s = 0;
+    let n = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === 'number') {
+            s += arr[i];
+            n++;
         }
     }
-    return result;
+    return n === 0 ? 0 : s / n;
 }
 
-let inputStr = " hello world";
-let chars = ['l', 'd'];
-console.log(removeChars(inputStr, chars));
+let myArray = ["Max", 62, 8, "Dan", 12, 18,775, true];
+console.log(summery(myArray));
+
 
 
 
