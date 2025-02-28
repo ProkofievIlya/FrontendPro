@@ -1,24 +1,16 @@
-let num = parseInt(prompt("Введіть ціле число:"));
-
-if (num <= 1) {
-    console.log(`${num} не є простим числом.`);
-} else {
-    let test = true;
-
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i === 0) {
-            test = false;
-            break;
+function removeChars(str, charsToRemove) {
+    let result = '';
+    for (let i = 0; i < str.length; i++) {
+        if (!charsToRemove.includes(str[i])) {
+            result += str[i];
         }
     }
-
-    if (test) {
-        console.log(`${num} є простим числом.`);
-    } else {
-        console.log(`${num} не є простим числом.`);
-    }
+    return result;
 }
 
+let inputStr = " hello world";
+let chars = ['l', 'd'];
+console.log(removeChars(inputStr, chars));
 
 
 
