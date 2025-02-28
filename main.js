@@ -1,18 +1,13 @@
-function summery(arr) {
-    let s = 0;
-    let n = 0;
-
-    for (let i = 0; i < arr.length; i++) {
-        if (typeof arr[i] === 'number') {
-            s += arr[i];
-            n++;
-        }
+function removeElement(array, item) {
+    const z = array.indexOf(item);
+    if (z !== -1) {
+        array.splice(z, 1);
     }
-    return n === 0 ? 0 : s / n;
 }
 
-let myArray = ["Max", 62, 8, "Dan", 12, 18,775, true];
-console.log(summery(myArray));
+const array = [1, 3, 4, 6, 2, 5, 7];
+removeElement(array, 4);
+console.log(array);
 
 
 
