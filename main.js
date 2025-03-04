@@ -1,18 +1,12 @@
-function sum(value) {
-    let final = 0;
-
-    return function (num) {
-        final += num;
-        return final;
+function name(a) {
+    return function(b) {
+        return a * b;
     };
 }
 
-const mySum = sum();
+console.log(name(5)(2));
+console.log(name(7)(3));
 
-console.log(mySum(4));
-console.log(mySum(6));
-console.log(mySum(10));
-console.log(mySum(7));
 
 
 
