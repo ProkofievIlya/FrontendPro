@@ -1,13 +1,18 @@
-function removeElement(array, item) {
-    const z = array.indexOf(item);
-    if (z !== -1) {
-        array.splice(z, 1);
-    }
+function sum(value) {
+    let final = 0;
+
+    return function (num) {
+        final += num;
+        return final;
+    };
 }
 
-const array = [1, 3, 4, 6, 2, 5, 7];
-removeElement(array, 4);
-console.log(array);
+const mySum = sum();
+
+console.log(mySum(4));
+console.log(mySum(6));
+console.log(mySum(10));
+console.log(mySum(7));
 
 
 
