@@ -1,29 +1,23 @@
-function newNum() {
-    let count = 0;
-    while (count < 10) {
-        let input = prompt("Введіть число більше 100:");
+let ladder = {
+    stepByStep: 0,
 
-        if (input === null) {
-            console.log("Ви нажали відміну та вийшли!");
-            return;
-        }
+    up: function () {
+        this.stepByStep++;
+        return this;
+    },
 
-        let num = Number(input);
+    down: function () {
+        this.stepByStep--;
+        return this;
+    },
 
-        if (num > 100) {
-            console.log(`Ви ввели наступне число (воно > 100): ${num}`);
-            return;
-        } else {
-            alert("Введіть число > 100.");
-        }
-
-        count++;
+    showStep: function () {
+        console.log(this.stepByStep);
+        return this;
     }
+};
 
-    console.log("Ви зробили 10 спроб.");
-}
-
-newNum();
+ladder.up().up().down().showStep();
 
 
 
