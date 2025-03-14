@@ -1,16 +1,8 @@
-const user = {
-    name: "Анна",
-    age: 33,
-    city: "Київ",
-    country: "Україна",
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-        displayInfo: function() {
-        console.log(`Ім'я: ${this.name}`);
-        console.log(`Вік: ${this.age}`);
-        console.log(`Місце проживання: ${this.city}, ${this.country}`);
-    }
-};
+const evenNumbers = numbers.filter(number => number % 2 === 0);
 
-user.displayInfo();
+console.log(evenNumbers);
+
 
 
