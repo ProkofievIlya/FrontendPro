@@ -1,33 +1,15 @@
-function createMultiplicationTable() {
-    const table = document.getElementById("multiplicationTable");
+let isColorChanged = false;
+const textBlock = document.querySelector('#textBlock');
+const colorButton = document.querySelector('#colorButton');
 
-for (let i = 1; i <= 10; i++) {
-    const row = document.createElement("tr");
+colorButton.addEventListener('click', () => {
+    if (isColorChanged) {
 
-for (let j = 1; j <= 10; j++) {
-    const cell = document.createElement("td");
-    const value = i * j;
-    cell.textContent = value;
+        textBlock.style.color = 'black';
+    } else {
 
-if (i === 1) {
-    cell.classList.add("header-row");
-}
+        textBlock.style.color = 'red';
+    }
 
-    if (j === 1) {
-    cell.classList.add("left-column");
-}
-
-    if (i === j) {
-    cell.classList.add("diagonal");
-}
-
-row.appendChild(cell);
-}
-
-table.appendChild(row);
-}
-}
-
-window.onload = createMultiplicationTable;
-
-
+    isColorChanged = !isColorChanged;
+});
