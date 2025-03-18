@@ -1,40 +1,33 @@
-const contactBook = {
-    contacts: [
-        {
-            name: "Олексій",
-            phone: "+380509999999",
-            email: "alex@gmail.com"
-        },
-        {
-            name: "Марія",
-            phone: "+380985555555",
-            email: "maria@gmail.com"
-        }
-    ],
+function createMultiplicationTable() {
+    const table = document.getElementById("multiplicationTable");
 
-    findContact: function(name) {
-        const contact = this.contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase());
-        if (contact) {
-            console.log(`Контакт знайдено!`);
-            return contact;
-        } else {
-            return `Контакт "${name}" не знайдено.`;
-        }
-    },
+for (let i = 1; i <= 10; i++) {
+    const row = document.createElement("tr");
 
-    addContact: function(name, phone, email) {
-        const newContact = { name, phone, email };
-        this.contacts.push(newContact);
-        console.log(`Контакт ${name} успішно додано!`);
-    }
-};
+for (let j = 1; j <= 10; j++) {
+    const cell = document.createElement("td");
+    const value = i * j;
+    cell.textContent = value;
 
-console.log(contactBook.findContact("Олексій"));
-console.log(contactBook.findContact("Ілля")); // перевірка, на імя, якого не має
+if (i === 1) {
+    cell.classList.add("header-row");
+}
 
+    if (j === 1) {
+    cell.classList.add("left-column");
+}
 
-contactBook.addContact("Інна", "+380631111111", "inna@gmail.com");
+    if (i === j) {
+    cell.classList.add("diagonal");
+}
 
+row.appendChild(cell);
+}
 
-console.log(contactBook.contacts); // виводимо усіх
+table.appendChild(row);
+}
+}
+
+window.onload = createMultiplicationTable;
+
 
