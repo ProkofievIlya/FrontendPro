@@ -1,15 +1,14 @@
-let isColorChanged = false;
-const textBlock = document.querySelector('#textBlock');
-const colorButton = document.querySelector('#colorButton');
+const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"];
 
-colorButton.addEventListener('click', () => {
-    if (isColorChanged) {
+function changeImage() {
 
-        textBlock.style.color = 'black';
-    } else {
+    const randomIndex = Math.floor(Math.random() * images.length);
 
-        textBlock.style.color = 'red';
-    }
+    document.getElementById("randomImage").src = "./images/" + images[randomIndex];
 
-    isColorChanged = !isColorChanged;
-});
+    document.getElementById("imageName").textContent = images[randomIndex];
+}
+
+document.getElementById("changeImageButton").addEventListener("click", changeImage);
+
+changeImage();
