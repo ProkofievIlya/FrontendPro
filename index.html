@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обробка кліків на кнопки</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>TODO лист</title>
 </head>
 <body>
-<div id="button-container" onclick="myClick(event)">
-    <button>Кнопка 1</button>
-    <button>Кнопка 2</button>
-    <button>Кнопка 3</button>
-</div>
+<h1>Список завдань</h1>
+<label for="taskInput"></label><input type="text" id="taskInput" placeholder="Додати нове завдання">
+<button id="addTaskBtn">Додати</button>
+<ul id="taskList"></ul>
+
 <script src="main.js"></script>
 </body>
 </html>
