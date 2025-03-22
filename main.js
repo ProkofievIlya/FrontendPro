@@ -1,14 +1,26 @@
-const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg"];
+let myLink = "";
 
-function changeImage() {
-
-    const randomIndex = Math.floor(Math.random() * images.length);
-
-    document.getElementById("randomImage").src = "./images/" + images[randomIndex];
-
-    document.getElementById("imageName").textContent = images[randomIndex];
+function enterLink() {
+    const link = prompt("Введіть посилання:");
+    if (link) {
+    myLink = link;
+    alert("Посилання збережено!");
+} else {
+    alert("Посилання не введено.");
+}
 }
 
-document.getElementById("changeImageButton").addEventListener("click", changeImage);
+function redirectToLink() {
+    if (myLink) {
+        if (myLink.startsWith("http://") || myLink.startsWith("https://")) {
+            window.location.href = myLink;
+        } else {
+            alert("Перевірте формат посилання! - (http://example.com або https://example.com)");
+        }
+    } else {
+        alert("Посилання не має. Введіть його!");
+    }
+}
 
-changeImage();
+
+
