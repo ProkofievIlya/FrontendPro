@@ -1,38 +1,52 @@
-const taskList = document.getElementById('taskList');
-const taskInput = document.getElementById('taskInput');
-const addTaskBtn = document.getElementById('addTaskBtn');
+const nameRegex = /^[a-zA-Zа-яА-Я\s]+$/;
+const messageRegex = /^.{5,}$/;
+const phoneRegex = /^\+380\d{9}$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-addTaskBtn.addEventListener('click', () => {
-    const taskText = taskInput.value.trim();
-    if (taskText !== '') {
-        const newTask = document.createElement('li');
+document.querySelector('#contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-        const span = document.createElement('span');
-        span.textContent = taskText;
-        span.classList.add('task-text');
+    const name = document.querySelector('#name').value;
+    const message = document.querySelector('#message').value;
+    const phone = document.querySelector('#phone').value;
+    const email = document.querySelector('#email').value;
 
-        const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = 'Видалити';
+    document.querySelector('#nameError').textContent = '';
+    document.querySelector('#messageError').textContent = '';
+    document.querySelector('#phoneError').textContent = '';
+    document.querySelector('#emailError').textContent = '';
 
-        newTask.appendChild(span);
-        newTask.appendChild(deleteBtn);
+    let valid = true;
 
-        taskList.appendChild(newTask);
-        taskInput.value = '';
+    if (!nameRegex.test(name)) {
+        document.querySelector('#nameError').textContent = 'Поле "Name" повинно містити лише літери та пробіли.';
+        valid = false;
+    }
+
+
+    if (!messageRegex.test(message)) {
+        document.querySelector('#messageError').textContent = 'Повідомлення повинно містити не менше 5 символів.';
+        valid = false;
+    }
+
+
+    if (!phoneRegex.test(phone)) {
+        document.querySelector('#phoneError').textContent = 'Номер телефону має починатись з +380 і містити 12 цифр.';
+        valid = false;
+    }
+
+
+    if (!emailRegex.test(email)) {
+        document.querySelector('#emailError').textContent = 'Email повинен містити @ та крапку.';
+        valid = false;
+    }
+
+
+    if (valid) {
+        console.log('Дані користувача:');
+        console.log('Name:', name);
+        console.log('Message:', message);
+        console.log('Phone:', phone);
+        console.log('Email:', email);
     }
 });
-
-taskList.addEventListener('click', (event) => {
-    if (event.target.classList.contains('task-text')) {
-        event.target.classList.toggle('completed');
-    } else if (event.target.tagName === 'BUTTON') {
-        event.target.parentElement.remove();
-    }
-});
-
-
-
-
-
-
-
