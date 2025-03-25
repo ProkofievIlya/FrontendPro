@@ -1,47 +1,62 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    background: #f4f4f4;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
+
+body, html {
+    height: 100%;
+    margin: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    border: 1px solid #a8a8a8;
+    font-family: Arial, sans-serif;
 }
 
-li::before {
-    content: "•";
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 5px;
+
+#contactForm {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
 }
 
-.task-text {
-    flex: 1;
+h2 {
+    color: #189be3;
+    text-align: center;
+    margin-bottom: 20px;
 }
-.completed {
-    text-decoration: line-through;
+
+div {
+    margin-bottom: 15px;
 }
-li:hover {
-    background: #e4e4e4;
+
+input, textarea {
+    width: 332px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
+
 button {
-    background: #d9534f;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    padding: 5px 10px;
 }
+
 button:hover {
-    background: #c9302c;
+    background-color: #45a049;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+}
+
+
+.error {
+    color: red;
+    font-size: 12px;
 }
