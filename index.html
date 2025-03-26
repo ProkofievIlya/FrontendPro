@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Форма з валідацією</title>
+
+</head>
+<body>
+
+<h2>We would like to help you</h2>
+<form id="contactForm">
+    <div>
+        <label for="name"></label>
+        <input type="text" id="name" name="name" placeholder="Name">
+        <div id="nameError" class="error"></div>
+    </div>
+    <div>
+        <label for="message"></label>
+        <textarea id="message" name="message" placeholder="Message"></textarea>
+        <div id="messageError" class="error"></div>
+    </div>
+    <div>
+        <label for="phone"></label>
+        <input type="text" id="phone" name="phone" placeholder="Phone number">
+        <div id="phoneError" class="error"></div>
+    </div>
+    <div>
+        <label for="email"></label>
+        <input type="text" id="email" name="email" placeholder="Email">
+        <div id="emailError" class="error"></div>
+    </div>
+    <div>
+        <button type="submit">Send message</button>
+    </div>
+</form>
+
+<script src="main.js"></script>
+</body>
+</html>
+
