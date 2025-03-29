@@ -1,52 +1,35 @@
-const nameRegex = /^[a-zA-Zа-яА-Я\s]+$/;
-const messageRegex = /^.{5,}$/;
-const phoneRegex = /^\+380\d{9}$/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const slides = document.querySelector('.slides');
+const slidesCount = document.querySelectorAll('.slide').length;
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const dots = document.querySelectorAll('.dot');
 
-document.querySelector('#contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
+let currentIndex = 0;
 
-    const name = document.querySelector('#name').value;
-    const message = document.querySelector('#message').value;
-    const phone = document.querySelector('#phone').value;
-    const email = document.querySelector('#email').value;
+const updateSlider = () => {
+    slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+    prevBtn.style.display = currentIndex === 0 ? 'none' : 'block';
+    nextBtn.style.display = currentIndex === slidesCount - 1 ? 'none' : 'block';
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+};
 
-    document.querySelector('#nameError').textContent = '';
-    document.querySelector('#messageError').textContent = '';
-    document.querySelector('#phoneError').textContent = '';
-    document.querySelector('#emailError').textContent = '';
-
-    let valid = true;
-
-    if (!nameRegex.test(name)) {
-        document.querySelector('#nameError').textContent = 'Поле "Name" повинно містити лише літери та пробіли.';
-        valid = false;
-    }
-
-
-    if (!messageRegex.test(message)) {
-        document.querySelector('#messageError').textContent = 'Повідомлення повинно містити не менше 5 символів.';
-        valid = false;
-    }
-
-
-    if (!phoneRegex.test(phone)) {
-        document.querySelector('#phoneError').textContent = 'Номер телефону має починатись з +380 і містити 12 цифр.';
-        valid = false;
-    }
-
-
-    if (!emailRegex.test(email)) {
-        document.querySelector('#emailError').textContent = 'Email повинен містити @ та крапку.';
-        valid = false;
-    }
-
-
-    if (valid) {
-        console.log('Дані користувача:');
-        console.log('Name:', name);
-        console.log('Message:', message);
-        console.log('Phone:', phone);
-        console.log('Email:', email);
-    }
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < slidesCount - 1) currentIndex++;
+    updateSlider();
 });
+
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) currentIndex--;
+    updateSlider();
+});
+
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlider();
+    });
+});
+
+updateSlider();

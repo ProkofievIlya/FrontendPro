@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <title>Форма з валідацією</title>
-
+    <title>Слайдер зображень</title>
 </head>
 <body>
-
-<h2>We would like to help you</h2>
-<form id="contactForm">
-    <div>
-        <label for="name"></label>
-        <input type="text" id="name" name="name" placeholder="Name">
-        <div id="nameError" class="error"></div>
+<div class="slider">
+    <div class="slides">
+        <img class="slide" src="./images/1.jpg" alt="Image 1">
+        <img class="slide" src="./images/2.jpg" alt="Image 2">
+        <img class="slide" src="./images/3.jpg" alt="Image 3">
+        <img class="slide" src="./images/4.jpg" alt="Image 4">
+        <img class="slide" src="./images/5.jpg" alt="Image 5">
+        <img class="slide" src="./images/6.jpg" alt="Image 6">
+        <img class="slide" src="./images/7.jpg" alt="Image 7">
+        <img class="slide" src="./images/8.jpg" alt="Image 8">
+        <img class="slide" src="./images/9.jpg" alt="Image 9">
     </div>
-    <div>
-        <label for="message"></label>
-        <textarea id="message" name="message" placeholder="Message"></textarea>
-        <div id="messageError" class="error"></div>
+    <div class="navigation">
+        <button class="nav-btn" id="prev">Prev</button>
+        <button class="nav-btn" id="next">Next</button>
     </div>
-    <div>
-        <label for="phone"></label>
-        <input type="text" id="phone" name="phone" placeholder="Phone number">
-        <div id="phoneError" class="error"></div>
-    </div>
-    <div>
-        <label for="email"></label>
-        <input type="text" id="email" name="email" placeholder="Email">
-        <div id="emailError" class="error"></div>
-    </div>
-    <div>
-        <button type="submit">Send message</button>
-    </div>
-</form>
+</div>
+<div class="dots">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
 
 <script src="main.js"></script>
+
 </body>
 </html>
-
