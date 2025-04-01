@@ -2,41 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="main.css">
-    <title>Слайдер зображень</title>
 </head>
 <body>
-<div class="slider">
-    <div class="slides">
-        <img class="slide" src="./images/1.jpg" alt="Image 1">
-        <img class="slide" src="./images/2.jpg" alt="Image 2">
-        <img class="slide" src="./images/3.jpg" alt="Image 3">
-        <img class="slide" src="./images/4.jpg" alt="Image 4">
-        <img class="slide" src="./images/5.jpg" alt="Image 5">
-        <img class="slide" src="./images/6.jpg" alt="Image 6">
-        <img class="slide" src="./images/7.jpg" alt="Image 7">
-        <img class="slide" src="./images/8.jpg" alt="Image 8">
-        <img class="slide" src="./images/9.jpg" alt="Image 9">
-    </div>
-    <div class="navigation">
-        <button class="nav-btn" id="prev">Prev</button>
-        <button class="nav-btn" id="next">Next</button>
-    </div>
+<div class="container">
+    <h1>ToDoList</h1>
+    <form class="form js--form">
+        <input type="text" name="value" required class="form__input js--form__input">
+        <button class="form__btn">Додати</button>
+    </form>
+    <ul class="js--todos-wrapper">
+        <li class="todo-item">
+            <input type="checkbox">
+            <span class="todo-item__description">Text</span>
+            <button class="todo-item__delete">Видалити</button>
+        </li>
+        <li class="todo-item todo-item--checked">
+            <input type="checkbox">
+            <span class="todo-item__description">Text</span>
+            <button class="todo-item__delete">Видалити</button>
+        </li>
+    </ul>
 </div>
-<div class="dots">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-</div>
-
 <script src="main.js"></script>
-
 </body>
 </html>
