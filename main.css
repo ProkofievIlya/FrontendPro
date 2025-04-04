@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -5,65 +6,57 @@
 }
 
 body {
-    line-height: 1.2;
-    font-size: 18px;
-    background-color: #66deb2;
-}
-
-h1, h2 {
-    text-align: center;
-    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    max-width: 75%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
 }
 
-.form {
-    background: #fff;
-    padding: 10px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    display: flex;
-    justify-content: center;
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.form__input {
-    min-height: 25px;
-    padding: 10px;
-    width: 100%;
-    border: 1px solid;
+.student-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.form__btn {
-    background: #0be69d;
-    border: none;
-    cursor: pointer;
-    width: 100px;
+.student-card h2 {
+    font-size: 1.5em;
+    color: #333;
 }
 
-.todo-item {
-    display: flex;
-    padding: 10px;
-    background: #fff;
-    border-radius: 10px;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+.student-card p {
+    font-size: 1em;
+    margin-bottom: 5px;
 }
-.todo-item--checked {
-    text-decoration: line-through;
+
+.summary {
+    font-weight: bold;
+    color: #2d7f2d;
 }
-.todo-item__description {
-    flex-grow: 1;
-    padding-left: 10px;
+
+.summary.warning {
+    color: #e99b26;
 }
-.todo-item__delete {
-    background: #0be69d;
-    border: none;
-    cursor: pointer;
-    width: 95px;
-    padding: 10px;
+
+.summary.error {
+    color: #e74c3c;
 }
