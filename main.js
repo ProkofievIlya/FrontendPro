@@ -1,28 +1,28 @@
-let startTime = 85;
+const API_KEY = '1ee367af001ced4aa0713bc64d77589b';
+const CITY = 'Dnipro';
+const UNITS = 'metric';
 
-const timerElement = document.getElementById("timer");
+async function getWeather() {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=${UNITS}&lang=ua`;
 
-function formatTime(seconds) {
-    const minutes = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Не вдалося завантажити погоду');
+        const data = await response.json();
+
+        const weatherInfo = `
+          <h2>${data.name}, ${data.sys.country}</h2>
+          <p><strong>Температура:</strong> ${data.main.temp}°C</p>
+          <p><strong>Вологість:</strong> ${data.main.humidity}%</p>
+          <p><strong>Погода:</strong> ${data.weather[0].description}</p>
+        `;
+
+        document.getElementById('weather').innerHTML = weatherInfo;
+    } catch (error) {
+        document.getElementById('weather').innerHTML = 'Помилка завантаження: ' + error.message;
+    }
 }
 
-function startTimer(duration) {
-    let timeLeft = duration;
+document.getElementById('refreshBtn').addEventListener('click', getWeather);
 
-    timerElement.textContent = formatTime(timeLeft);
-
-    const interval = setInterval(() => {
-        timeLeft--;
-
-        if (timeLeft <= 0) {
-            clearInterval(interval);
-            timerElement.textContent = "00:00";
-        } else {
-            timerElement.textContent = formatTime(timeLeft);
-        }
-    }, 1000);
-}
-
-startTimer(startTime);
+getWeather();
